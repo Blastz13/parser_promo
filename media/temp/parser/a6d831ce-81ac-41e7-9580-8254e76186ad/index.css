@@ -1,0 +1,290 @@
+* { margin: 0px; padding: 0px; }
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+select:focus, input:focus {outline:none;}
+body { background: url('http://prelblog.com/hon/ro/orgbook/img/background.png') repeat scroll 0% 0% rgb(255, 255, 255); font-family: Tahoma,Verdana; font-size: 14px; line-height: 23px; width: 100%; }
+a { color: rgb(10, 120, 194); outline: medium none; text-decoration: underline; }
+a:hover { text-decoration: none; }
+p { margin: 0px 0px 11px; }
+strong, b { font-weight: bolder; }
+img { border: medium none; }
+h1 { margin: 10px 0px; font-size: 21px; }
+h2 { margin: 10px 0px; font-size: 22px; }
+h3 { margin: 2px 0px 10px; font-size: 20px; font-weight: normal; }
+.container {margin: 0px auto;max-width: 960px; }
+.header { max-width: 960px; margin: 0px auto 20px; background: url('http://prelblog.com/hon/ro/orgbook/img/header.png') no-repeat scroll 0% 0% transparent; height: 131px; cursor: pointer; }
+.left-column { float: left; width: 625px; background: none repeat scroll 0% 0% white; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); margin-right: 20px; padding: 30px; margin-bottom: 10px; }
+.sidebar { float: right; width: 309px; font-size: 12px; }
+.sidebar-last-posts { background: none repeat scroll 0% 0% white; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); padding: 15px; margin-bottom: 20px; }
+.sidebar-last-post { margin-bottom: 0px; }
+.sidebar-last-post a { color: rgb(72, 155, 31); }
+.sidebar-last-post-info { font-size: 11px; margin-bottom: 15px; }
+.sidebar-last-post-info-login { color: rgb(187, 34, 92); margin-right: 5px; }
+.sidebar-last-post-info-date { margin-right: 5px; color: rgb(119, 119, 119); }
+.sidebar-last-post-info-comments { color: rgb(119, 119, 119); text-decoration: underline; }
+.sidebar-bloggers { background: none repeat scroll 0% 0% white; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); padding: 15px; margin-bottom: 20px; }
+.sidebar-bloggers-avatar { display: inline-block; }
+.sidebar-bloggers img { margin: 5px; }
+.footer { clear: both; text-align: center; margin-bottom: 20px; font-size: 12px; color: rgb(119, 119, 119); }
+.photo { width: 100%; height: auto; }
+.vk-container { font-family: tahoma,arial,verdana,sans-serif,Lucida Sans; font-size: 11px; line-height: 17px; color: black; text-decoration: none; }
+.vk-link { text-decoration: none ! important; cursor: default ! important; }
+.vk-header { background: none repeat scroll 0% 0% rgb(218, 226, 232); padding: 4px 4px 4px 6px; margin-bottom: 10px; }
+.vk-logo { background: url('http://prelblog.com/hon/ro/orgbook/img/vk-logo.gif') no-repeat scroll 0% 0% transparent; width: 16px; height: 16px; float: right; margin-top: -1px; }
+.vk-header-text { padding: 2px 3px 1px; line-height: 100%; color: rgb(69, 104, 142); font-weight: bold; }
+.vk-avatar img { float: left; margin-right: 10px; }
+.vk-comment, .vk-comment-load { margin-bottom: 15px; position: relative; border-bottom: 1px solid rgb(218, 225, 232); padding-bottom: 15px; }
+.vk-comment:last-child { border-bottom: 0px none; }
+.vk-comment-name { color: rgb(43, 88, 122); font-weight: bold; font-size: 12px;margin-left:60px; }
+.vk-comment-text { margin-left: 60px; font-size: 14px; text-align: justify; line-height: 18px; }
+
+.vk-comment-text img {margin-top: 15px;}
+.vk-comment-date { margin-left: 60px; color: rgb(153, 153, 153); }
+.vk-comment-like { position: absolute; right: -5px; bottom: 10px; background: url('http://prelblog.com/hon/ro/orgbook/img/like.png') no-repeat scroll left center transparent; width: 30px; height: 16px; display: inline-block; }
+.vk-comment-like:hover { opacity: 0.5; cursor: pointer; }
+.vk-comment-like-count { padding-left: 14px; font-weight: bold; color: rgb(114, 149, 178); font-size: 10px; }
+.vk-comment-answer { color: rgb(43, 88, 122); }
+.vk-comment-answer:hover { opacity: 0.5; cursor: pointer; }
+
+/* Header */
+.header {
+	max-width: 960px;
+	margin: 0px auto 20px;
+	background: url('http://prelblog.com/hon/ro/orgbook/img/header.png') no-repeat scroll 0% 0% transparent;
+	height: 131px;
+	box-shadow: 0px 1px 2px rgb(129, 129, 129);
+	text-transform: uppercase;
+	color: #ffffff;
+	position: relative;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+a.hlink {text-decoration: none;}
+.header h1 {position: absolute;top: 45px;left: 45px;}
+.header div {position: absolute;font-weight: bold;top: 25px;}
+.header .h-comment {right: 230px;}
+.header .h-popular {right: 128px;}
+.header .h-likes {right: 24px;}
+/* Header */
+
+@media only screen and (max-width: 988px) {
+
+.left-column {
+    float: none;
+    width: 100%;
+  		margin:0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.sidebar{
+	display: none;
+}
+
+.header {
+
+    background: url('http://prelblog.com/hon/ro/orgbook/img/hm.png') repeat-x scroll 0% 0% transparent;
+    height: 131px;
+  
+}
+.header div{display:none;}
+img{
+	max-width: 100%;
+}
+
+}
+
+
+@media only screen and (max-width: 540px) {
+
+.left-column img{
+	display: block;
+	margin: 10px auto!important;
+	float:none!important;
+}
+.wheel img {
+    margin: 0!important;
+}
+h2 {
+    margin: 10px 0px;
+    font-size: 19px;
+}
+.vk-avatar img{
+	float:left!important;
+}
+}
+
+
+.text-center{
+	text-align: center;
+	
+}
+
+.main-btn{
+	border: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    background: #4a8cc3;
+    background: -moz-linear-gradient(top, #4a8cc3 0%, #3d628e 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #4a8cc3), color-stop(100%, #3d628e));
+    background: -webkit-linear-gradient(top, #4a8cc3 0%, #3d628e 100%);
+    background: -o-linear-gradient(top, #4a8cc3 0%, #3d628e 100%);
+    background: -ms-linear-gradient(top, #4a8cc3 0%, #3d628e 100%);
+    background: linear-gradient(to bottom, #4a8cc3 0%, #3d628e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=0 );
+    margin: 10px auto;
+    padding: 12px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    *display: inline;
+    text-decoration: none;
+
+    *zoom: 1;
+}
+
+.main-btn:hover{
+	    background: #3d628e;
+    background: -moz-linear-gradient(top, #3d628e 0%, #4a8cc3 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #3d628e), color-stop(100%, #4a8cc3));
+    background: -webkit-linear-gradient(top, #3d628e 0%, #4a8cc3 100%);
+    background: -o-linear-gradient(top, #3d628e 0%, #4a8cc3 100%);
+    background: -ms-linear-gradient(top, #3d628e 0%, #4a8cc3 100%);
+    background: linear-gradient(to bottom, #3d628e 0%, #4a8cc3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=0 );
+}
+
+.order_block {
+    display: none;
+    font-family: 'Arial', sans-serif;
+}
+.prod_img_wrapper {
+    max-width: 300px;
+    margin: 50px auto;
+    position: relative;
+}
+.prod_img {
+    width: 80%;
+    max-width: 300px;
+}
+.priceс {
+    position: absolute;
+        font-family: 'Arial', sans-serif;
+    right: 0;
+    bottom: 0;
+
+    color:#000;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 30px;
+    width: 165px;
+    height: 98px;
+    text-align: center !important;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.3;
+    transform: rotateZ(-7deg);
+    margin: -0px auto 0px;
+    background: linear-gradient(to right, rgb(238, 165, 19) 0%, rgb(253, 237, 19) 100%);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 19%;
+}
+ span.discountс {
+    display: block;
+    margin-top: 9px;
+    font-size: 18px;
+}
+.price_main {
+    border-bottom: 2px solid #d31812;
+    font-size: 24px;
+    line-height: 0px;
+    margin: 0 auto;
+}
+.js_old_price {
+    display: block;
+    margin: 0 auto;
+}
+.wheel_input {
+    padding: 10px !important;
+    display: block !important;
+    margin: 0 auto 20px!important;
+    padding: 10px !important;
+    width: 50% !important;
+    border: 2px solid grey !important;
+    border-radius: 5px !important;
+}
+.data_label {
+    line-height: 30px;
+}
+.country_select {
+    display: none!important;
+    width: 52%!important;
+}
+
+.order_form {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+@media screen and (max-width: 480px) {
+    .wheel_input {
+        width: 90%!important;
+    }
+    .country_select {
+        width: 96%!important;
+
+    }
+}
+.main-link {
+    display: block;
+    margin: 40px auto ;
+    padding: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #de0606;
+    text-align: center;
+    color: #fff!important;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.main-link:hover {
+    opacity: 0.8;
+}
+
+.time_remains{
+    font-size: 1.1em;
+    color: red;
+    font-weight: bold;
+}
+.time_remains_title {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 992px) {
+    .vk-comment-load {
+        display: none;
+    }
+}
+@media screen and (max-width: 540px) {
+    .vk-avatar img {
+        margin-right: 10px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 40px;
+    }
+    .vk-comment-name {
+        margin-left: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .vk-comment-text, .vk-comment-date {
+        margin-left: 0;
+    }
+}

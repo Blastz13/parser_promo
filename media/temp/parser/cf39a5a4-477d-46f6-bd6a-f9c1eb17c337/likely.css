@@ -1,0 +1,34 @@
+.likely,.likely__widget{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:0;text-indent:0!important;list-style:none!important;font-weight:400;font-family:Helvetica Neue,Arial,sans-serif}
+.likely{display:inline-block}
+.likely__widget{margin:0;font-size:inherit}
+.likely{opacity:0;font-size:0!important}
+.likely_visible{opacity:1;transition:opacity .1s ease-in}
+.likely>*{display:inline-block;visibility:hidden}
+.likely_visible>*{visibility:inherit}
+.likely__widget{position:relative;white-space:nowrap}
+.likely__button,.likely__widget{display:inline-block}
+.likely__button,.likely__counter{text-decoration:none;text-rendering:optimizeLegibility;margin:0;outline:0}
+.likely__button{position:relative;user-select:none}
+.likely__counter{display:none;position:relative;font-weight:400}
+.likely_ready .likely__counter{display:inline-block}
+.likely_ready .likely__counter_empty{display:none}
+.likely__button,.likely__counter,.likely__icon,.likely__widget{vertical-align:top}
+.likely__widget{transition:background .33s ease-out,color .33s ease-out,fill .33s ease-out}
+.likely__widget:active,.likely__widget:focus,.likely__widget:hover{transition:none;cursor:pointer}
+.likely__icon{position:relative;text-align:left;display:inline-block}
+.likely svg{position:absolute;left:2px;top:3px;width:18px;height:18px}
+.likely__button,.likely__counter{line-height:inherit;cursor:inherit}
+.likely__button:empty{display:none}
+.likely__counter{text-align:center}
+.likely .likely__widget{color:#fff}
+.likely .likely__counter{background-size:1px 1px;background-repeat:repeat-y;background-image:linear-gradient(to right,rgba(0,0,0,.2) 0,rgba(0,0,0,0) .5px,rgba(0,0,0,0) 100%)}
+.likely__widget_facebook{fill:#425497}
+.likely__widget_facebook svg{left:0;top:0;width:24px;height:24px}
+.likely__widget_odnoklassniki{fill:#f6903b}
+.likely__widget_odnoklassniki svg{left:0;top:0;width:24px;height:24px}
+.likely__widget_vkontakte{background:#526e8f;fill:#fff}
+.likely{margin:0 -3px;line-height:14px}
+.likely .likely__widget{line-height:22px;font-size:14px;border-radius:3px;height:24px;width:24px;text-align:center;margin:0 3px 10px}
+.likely .likely__icon{width:24px;height:24px}
+.likely .likely__button{padding:1px 4px 1px 0}
+.likely .likely__counter{padding:1px 4px}

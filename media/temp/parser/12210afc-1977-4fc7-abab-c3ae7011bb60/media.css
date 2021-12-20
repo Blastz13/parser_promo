@@ -1,0 +1,133 @@
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1034px;
+    }
+}
+
+@media (max-width: 991px) {
+    .menu, .breadcrumb, .hidden-xs {
+        display: none;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    .vk-comment {
+        /* display: none; */
+    }
+
+    .vk-comment:nth-last-of-type(1), .vk-comment:nth-last-of-type(2), .vk-comment:nth-last-of-type(3), .vk-comment:nth-last-of-type(4), .vk-comment:nth-last-of-type(5), .vk-comment:nth-last-of-type(6) {
+        /* display: block; */
+    }
+
+    .product {
+        float: none;
+        margin: 0 auto 10px;
+        display: table;
+    }
+
+    .list {
+        margin-left: 0;
+    }
+
+    .wrap {
+        padding: 10px 15px 15px 15px;
+    }
+
+    .wrap__2 {
+        padding: 15px;
+    }
+
+    .right {
+        float: none;
+        display: table;
+        margin: 0 auto 15px;
+    }
+
+    .doc__2 {
+        width: 90px;
+        float: none;
+        display: table-cell;
+    }
+
+    .doc__info {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 15px;
+    }
+
+    .h3 {
+        font-size: 20px;
+    }
+
+    .doc__info p {
+        font-size: 14px;
+    }
+
+    .wrap__2 i, .content, b {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .doc {
+        margin: 0 auto 0;
+        float: none;
+        display: table;
+        text-align: center;
+        max-width: 310px;
+    }
+
+    .doc .label {
+        position: relative;
+        display: block;
+        text-align: center;
+        left: 0;
+        bottom: 15px;
+        margin-right: 0;
+    }
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .vk-comment-text {
+        clear: both;
+        padding: 10px 0px 0;
+    }
+
+    .vk-avatar img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .vk-comment-name {
+        font-size: 15px;
+        padding-top: 15px;
+    }
+
+    .vk-comment .date {
+        margin-left: 0;
+    }
+
+    .product {
+        max-height: 250px !important;
+    }
+}
