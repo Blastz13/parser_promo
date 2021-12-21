@@ -17,6 +17,7 @@ class Option(models.Model):
     modified = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
 
     class Meta:
+        verbose_name_plural = "Конфиги"
         ordering = ['-modified']
 
     def __str__(self):
@@ -73,6 +74,7 @@ class AffiliateNetwork(models.Model):
     modified = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
 
     class Meta:
+        verbose_name_plural = "Партнерские сети"
         ordering = ['-modified']
 
     def __str__(self):
@@ -117,6 +119,7 @@ class PresetParser(models.Model):
     modified = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
 
     class Meta:
+        verbose_name_plural = "Пресеты парсера"
         ordering = ['name']
 
     def __str__(self):
@@ -167,9 +170,11 @@ class DownloadedPromo(models.Model):
         (KEITARO_TYPE_PROMO_LANDING, 'Лендинг (keitaro)'),
         (KEITARO_TYPE_PROMO_OFFER, 'Оффер (keitaro)'),
     ]
-
+    geo = models.CharField(max_length=255, blank=True, verbose_name="Гео")
+    keitaro_group_id = models.IntegerField(blank=True, verbose_name="Кейтаро id группы")
     url_promo = models.CharField(max_length=255, verbose_name='Промо')
     archive_promo = models.CharField(max_length=255, verbose_name='Подготовленный промо-архив', blank=True, null=True)
+    archive_promo_zip = models.FileField(upload_to='media/', blank=True)
     type_promo = models.SmallIntegerField(verbose_name='Тип промо', choices=TYPE_PROMO_CHOICES)
     preset = models.ForeignKey('PresetParser', verbose_name='Пресет', on_delete=models.CASCADE, blank=True, null=True)
     status = models.SmallIntegerField(verbose_name='Статус', choices=STATUS_CHOICES, default=STATUS_PROCESS)
@@ -185,6 +190,7 @@ class DownloadedPromo(models.Model):
     modified = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
 
     class Meta:
+        verbose_name_plural = "Скачанные промо"
         ordering = ['-pk']
 
     def __str__(self):
@@ -219,7 +225,7 @@ class ParserBatch(models.Model):
     STATUS_CHOICES = [
         (0, '---------'),
         (STATUS_NEW, 'Новый'),
-        (STATUS_RUN, 'Выполнен'),
+        (STATUS_RUN, 'Выполняется'),
         (STATUS_OK, 'Выполнен.'),
         (STATUS_ERROR, 'Ошибка в парсере!'),
     ]
@@ -232,6 +238,7 @@ class ParserBatch(models.Model):
         User, on_delete=models.CASCADE, verbose_name='Владелец', editable=False, blank=True, null=True)
 
     class Meta:
+        verbose_name_plural = "Пакетные запросы"
         ordering = ['-pk']
 
     def __str__(self):
@@ -262,6 +269,7 @@ class Geo(models.Model):
     modified = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
 
     class Meta:
+        verbose_name_plural = "Гео"
         ordering = ['name']
 
     def __str__(self):

@@ -121,7 +121,14 @@ class ApiKeitaro:
 
     def post_create_landing_pages(self, params):
         """Загрузить лендинг в Keitaro."""
-        s1 = """{"action_options": {"folder": """ + '''"{}"'''.format(params.get("keitaro_folder_name"))
+        print("Create_landing")
+        folder = params.get("keitaro_folder_name")
+        if folder:
+            pass
+        else:
+            folder = params.get("name")
+
+        s1 = """{"action_options": {"folder": """ + '''"{}"'''.format(folder)
         s2 = '}, "name":'
         s3 = ' "{}", "group_id": "17","state": "active", "landing_type": "local", "action_type": "local_file", "archive":'.format(params.get('name'))
         s4 = '"data:application/zip;base64,{0}"'.format(params.get('archive_string'))
@@ -150,13 +157,19 @@ class ApiKeitaro:
 
     def post_create_offer(self, params):
         """Загрузить оффер в Keitaro."""
+        print("Create_offer")
+        folder = params.get("keitaro_folder_name")
+        if folder:
+            pass
+        else:
+            folder = params.get("name")
         s1 = '''{"payout_auto": "true",
         "payout_type": "CPA",
         "state": "active",
         "offer_type": "local",
         "action_type": "local_file",'''
 
-        s2 = '''"action_options": {''' + '''"folder": "{}"'''.format(params.get("keitaro_folder_name")) +'''},'''
+        s2 = '''"action_options": {''' + '''"folder": "{}"'''.format(folder) +'''},'''
         s3 = '''"name": "{}", '''.format(params.get("name"))
         s4 = '''"group_id": "{}",'''.format(params.get('group_id'))
         s5 = '''"country": "{}",'''.format(params.get('country'))
@@ -173,7 +186,6 @@ class ApiKeitaro:
         # print(r['preview_path'])
 
         r = json.loads(qq)
-        print(r)
         return r
 
         # data = {

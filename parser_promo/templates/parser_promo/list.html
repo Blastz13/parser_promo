@@ -65,16 +65,16 @@ table.table-1 th{
       <th>Добавлен</th>
       <th>Отправить</th>
     </tr>
-    {% for o in obj%}
-    <form action="{% url 'tools_parser_batch_run' o.pk %}" method="post" name="price">{% csrf_token %}
+    {% for parser_batch in parser_batchs %}
+    <form action="{% url 'tools_parser_batch_run' parser_batch.pk %}" method="post" name="price">{% csrf_token %}
     <tr>
-      <td>{{ o.id}}</td>
-      <td>{% ifequal o.status 1 %} Новый {% endifequal%}
-          {% ifequal o.status 2 %} Выполнен {% endifequal%}
-          {% ifequal o.status 3 %} Выполнен {% endifequal%}
-          {% ifequal o.status 10 %} Ошибка {% endifequal%}</td>
-      <td><pre style="nargin:0; padding:0; ">{{ o.text_tasks}}</pre></td>
-      <td>{{ o.created|date:"Y-m-d H:i:s" }}</td>
+      <td>{{ parser_batch.id}}</td>
+      <td>{% ifequal parser_batch.status 1 %} Новый {% endifequal%}
+          {% ifequal parser_batch.status 2 %} Выполняется {% endifequal%}
+          {% ifequal parser_batch.status 3 %} Выполнен {% endifequal%}
+          {% ifequal parser_batch.status 10 %} Ошибка {% endifequal%}</td>
+      <td><pre style="nargin:0; padding:0; ">{{ parser_batch.text_tasks}}</pre></td>
+      <td>{{ parser_batch.created|date:"Y-m-d H:i:s" }}</td>
       <td><button type="submit" class="btn btn-success">Отправить</button></td>
     </tr>
     </form>

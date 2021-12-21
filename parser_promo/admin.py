@@ -28,5 +28,5 @@ class GeoForm(admin.ModelAdmin):
 
 @admin.register(DownloadedPromo)
 class DownloadedPromoForm(admin.ModelAdmin):
-    list_display = ["id", "status", "url_promo", "type_promo", "preset", "created"]
-
+    list_display = ["status", "url_promo", "type_promo", "geo", "type_promo", "preset", "created"]
+    list_filter = ["type_promo", "geo", "keitaro_group_id"]

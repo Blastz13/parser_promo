@@ -31,7 +31,7 @@ from .handler_parser import HandlerParser
 
 def tools_parser_batch_list(request):
     parser_batch = ParserBatch.objects.all()
-    return render(request, 'parser_promo/list.html', context={"obj": parser_batch})
+    return render(request, 'parser_promo/list.html', context={"parser_batchs": parser_batch})
 
 
 def tools_parser_batch_run(request, pk):
@@ -124,8 +124,8 @@ def tools_parser_batch_run(request, pk):
     #
     messages.info(request, f'Отправлено задач на скачивание: {counter_processed}.')
 
-    parser_batch.status = ParserBatch.STATUS_RUN
-    parser_batch.save()
+    # parser_batch.status = ParserBatch.STATUS_RUN
+    # parser_batch.save()
 
     return redirect('tools_parser_batch_list')
 

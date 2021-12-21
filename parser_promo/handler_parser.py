@@ -16,6 +16,8 @@ import base64
 import requests
 import uuid
 
+from django.core.files.base import ContentFile
+
 from .forms import ParserForm
 from .models import PresetParser, AffiliateNetwork, DownloadedPromo, ParserBatch
 from .models import Geo
@@ -739,6 +741,9 @@ class HandlerParser:
                 except:
                     pass
             self._add_in_log('Промо заархивировано.')
+        print(self.model)
+        zip = open(self.promo_zip, 'rb')
+        self.model.archive_promo_zip.save(str(self.name_site) + '.zip', ContentFile(zip.read()))
 
     def remove_site(self):
         """ Удалить рекурсивно скаченный сайт """
@@ -763,8 +768,12 @@ class HandlerParser:
             url_promo = self.url
         else:
             url_promo = self.name_site
-
+        print(self.geo.iso)
+        print(self.keitaro_group_id)
+        print("GG")
         self.model = DownloadedPromo.objects.create(
+            geo=self.geo.iso,
+            keitaro_group_id=self.keitaro_group_id,
             url_promo=url_promo,
             type_promo=self.type_promo,
             preset=self.preset,
@@ -829,10 +838,8 @@ class HandlerParser:
                 })
                 response = api.post_create_offer(data)
                 keitaro_type_promo = DownloadedPromo.KEITARO_TYPE_PROMO_OFFER
-            try:
-                result = response.json()
-            except:
-                result = response
+
+            result = response
             print(result)
             print('id' in result)
         except Exception as e:
@@ -860,16 +867,16 @@ class HandlerParser:
             if self.parser_batch:
                 self.parser_batch.status = 3
                 self.parser_batch.save()
-                print(self.parser_batch.status)
-                print(self.parser_batch)
-                print(self.parser_batch)
 
 
             return True
         else:
-            text_error = response.text
+            text_error = response
             if self.parser_batch:
-                self.save_error_for_parser_batch(response.text)
+                self.save_error_for_parser_batch(response)
+                self.parser_batch.status = 10
+                self.parser_batch.save()
+                print(self.parser_batch.status)
             self._add_in_log('ОШИБКА отправки в Keitaro:')
             self._add_in_log(text_error)
             self.model.status = DownloadedPromo.STATUS_KEITARO_ERROR
@@ -889,7 +896,7 @@ class HandlerParser:
                 self.download_success_html()
                 self.edit_success_html()
                 self.archive_site()
-                # self.remove_site()
+                self.remove_site()
                 self.add_promo_in_record()
                 self.upload_to_keitaro()
 
